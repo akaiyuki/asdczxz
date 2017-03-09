@@ -1,18 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'my-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'my-about',
+    templateUrl: 'components/about/about.component.html',
+    styleUrls: ['components/about/about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
+    name: string = "About Us";
+    param: string;
 
-  constructor() {
-    // Do stuff
-  }
-
-  ngOnInit() {
-    console.log('Hello About');
-  }
-
+    constructor(private params: ActivatedRoute) {
+        params.params
+            .subscribe((data: { id?: string}) => this.param = data.id);
+    }
 }

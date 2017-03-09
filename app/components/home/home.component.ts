@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Http } from "@angular/http";
+import 'rxjs/add/operator/map';
 
 @Component({
-  selector: 'my-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'my-home',
+    templateUrl: 'components/home/home.component.html',
+    styleUrls: ['components/home/home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+    name: string = "Home page";
+    users: {};
 
-  constructor() {
-    // Do stuff
-  }
-
-  ngOnInit() {
-    console.log('Hello Home');
-  }
-
+    constructor(http: Http) {
+        http.get("/users")
+            .map(data => data.json())
+            .subscribe((data) => this.users = data);
+    }
 }
