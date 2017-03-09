@@ -11,7 +11,7 @@
     "postinstall": "npm run build:prod"
   },
   "repository": {
-    "url": "https://github.com/vladotesanovic/angular2-express-slim"
+    "url": "https://github.com/akaiyuki/asdczxz"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
