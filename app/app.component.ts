@@ -9,8 +9,14 @@ import { Component } from '@angular/core';
 }
 `],
     template: `
-<h1>My First {{name}} app</h1>
-<router-outlet></router-outlet>
+<main>
+  <h1>AV Timelogs!</h1>
+
+  <!-- Images (and assets) are parsed and loaded from within the public directory -->
+  <img src="/img/timelogicon.png">
+
+  <router-outlet></router-outlet>
+</main>
 
 <a [routerLink]="['/']">Home</a> | <a [routerLink]="['/about/', { id: 2 }]">About</a>`,
 })
